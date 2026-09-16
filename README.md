@@ -1,4 +1,8 @@
-# AI Projects · GitHub Pages
+# Chengmu She · Personal Portfolio
+
+An English job-seeking portfolio with an illustrated, moonlit introduction. Click anywhere on the rooftop scene to enter the personal profile and selected work. The scene depicts a boy with a green snake on his shoulder looking at the moon, and uses original SVG artwork with desktop, portrait, and landscape compositions.
+
+`index.html` is the introduction; `portfolio.html` contains the profile, technology overview, four interactive project entries, project notes, and GitHub contact link. Each application returns directly to the portfolio. The entrance and project notes also work without JavaScript. Motion respects the device's reduced-motion preference.
 
 在线地址：https://chengmushe.github.io/ai-portfolio/
 
