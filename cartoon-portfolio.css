@@ -1,0 +1,167 @@
+/* Cartoon layer for the portfolio. The moonlit entrance keeps its own styles. */
+:root {
+  --paper: #f9f7ef;
+  --ink: #354438;
+  --muted: #68705f;
+  --line: #d9dece;
+  --accent: #607946;
+}
+
+body { background-image: radial-gradient(#74816618 .7px, transparent .7px); background-size: 9px 9px; }
+::selection { background: #dce6b8; color: #354438; }
+:focus-visible { outline-color: #536e43; }
+.brand img { border-radius: 0; transform: rotate(-12deg); }
+.eyebrow, .intro-footnote { color: #68745c; }
+.intro { padding-top: 65px; padding-bottom: 62px; }
+h1, h2 { font-family: "Chalkboard SE", "Trebuchet MS", sans-serif; font-weight: 600; letter-spacing: -1.6px; }
+h1 { font-size: 59px; line-height: 1.18; }
+h2 { font-size: 36px; line-height: 1.25; }
+h2 em { color: #688249; }
+.build-word { color: #688249; }
+.build-word svg { color: #afbf88; }
+.primary { color: #fffbee; background: #536e43; border-radius: 12px; }
+.postcard { background: #fffdf4; border: 1px solid #cbd3b8; box-shadow: 5px 8px 0 #dce2cd80; border-radius: 6px; }
+.postcard-image { height: 252px; background: #f3f5e8; border-radius: 3px; }
+.postcard-image img { object-fit: contain; }
+.postcard-caption { font-family: "Chalkboard SE", "Trebuchet MS", sans-serif; font-size: 17px; padding: 19px 7px; color: #697653; }
+.postcard-tape { background: #adbd8466; }
+.postcard-stamp { background: #f0dfa2; border-color: #76855a; box-shadow: inset 0 0 0 5px #f0dfa2, inset 0 0 0 6px #76855a80; }
+.toolkit { background: #eff1e6a6; }
+.toolkit .toolkit-label { color: #69725e; }
+.toolkit-inner { font-family: "Trebuchet MS", sans-serif; font-size: 14px; }
+.work { padding-top: 60px; padding-bottom: 60px; }
+.section-heading { margin-bottom: 29px; gap: 24px; }
+.section-heading > p { max-width: 280px; }
+
+.project-grid { gap: 25px; }
+.project {
+  --card-bg: #f3f4dd;
+  --card-border: #d6dcb8;
+  --card-accent: #5b7136;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 19px;
+  position: relative;
+  box-shadow: 0 4px 0 #69784a08;
+}
+.knowledge-project { --card-bg: #edf3e7; --card-border: #cfdcca; --card-accent: #536e48; }
+.radar-project { --card-bg: #f0edf6; --card-border: #dbd3e8; --card-accent: #756187; }
+.studio-project { --card-bg: #fbefe2; --card-border: #e8d7be; --card-accent: #926336; }
+a.card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); position: relative; }
+.project-number { top: 25px; left: 25px; color: var(--card-accent); font-size: 9px; letter-spacing: 1.5px; }
+.project-body { grid-column: 1; grid-row: 1; padding: 62px 0 24px 25px; min-height: 309px; }
+.project-type { color: var(--card-accent); font-size: 8px; line-height: 1.8; letter-spacing: 1.2px; margin-bottom: 9px; }
+.project-body h3 { font-size: 23px; font-weight: 600; letter-spacing: -.6px; line-height: 1.2; margin-bottom: 13px; }
+.project-body > p { font-size: 11px; line-height: 1.85; min-height: 81px; margin-bottom: 17px; color: #68715e; }
+.radar-project .project-body > p { color: #6d6676; }
+.studio-project .project-body > p { color: #756651; }
+.tags { gap: 5px; margin-bottom: 0; }
+.tags li { font-size: 8px; padding: 4px 6px; border: 1px solid var(--card-border); background: #ffffff4d; color: var(--card-accent); }
+.project .project-art { grid-column: 2; grid-row: 1; align-self: center; height: auto; margin: 29px 10px 0 6px; background: none; border: 0; overflow: visible; text-align: center; }
+.project-art > img { width: 100%; height: auto; display: block; transform-origin: 50% 80%; transition: transform .35s ease; }
+.project-art figcaption { font-size: 9px; letter-spacing: .1px; color: var(--card-accent); line-height: 1.7; margin-top: 5px; }
+.project-art figcaption span { padding-right: 4px; font-size: 13px; }
+.project-cta { grid-column: 1 / -1; padding: 15px 25px; margin: 0; color: var(--card-accent); border-top: 1px solid var(--card-border); background: #ffffff24; font-size: 11px; font-weight: 600; }
+.project-cta > span { font-size: 17px; display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid var(--card-border); border-radius: 50%; background: #ffffff55; transition: transform .25s; }
+.project details { border-color: var(--card-border); }
+.project summary { padding: 11px 25px; color: var(--card-accent); background: #ffffff40; font-size: 10px; }
+.project summary:hover { color: var(--card-accent); background: #ffffff88; }
+.project-notes { padding: 8px 25px 22px; background: #fffdf7bb; }
+.project-notes p { color: #68715e; }
+.project-notes .scope-note { color: #68715e; border-color: var(--card-border); }
+@media (hover: hover) {
+  .project:hover { box-shadow: 4px 7px 0 #d9dbd063; transform: translateY(-4px) rotate(-.2deg); border-color: var(--card-accent); }
+  .project:nth-child(even):hover { transform: translateY(-4px) rotate(.2deg); }
+  .card:hover .project-art > img { transform: translateY(-4px) rotate(3deg); }
+  .card:hover .project-cta > span { transform: rotate(45deg); }
+}
+
+.approach-grid { gap: 24px; border-top: 0; padding-top: 0; }
+.approach-grid article { border: 1px dashed #ccd3ba; border-radius: 14px; padding: 22px; background: #f1f2e6a6; }
+.approach h3 { line-height: 1.5; }
+.approach { padding-bottom: 62px; }
+.contact-card { background: #3d533f; border-color: #344a36; border-radius: 20px; }
+.contact h2 { font-size: 44px; }
+.contact h2 em { color: #f0d5a6; }
+.contact .eyebrow { color: #d2d8c7; }
+.contact p:not(.eyebrow) { color: #d2d8c7; }
+.cream { background: #f5e9cb; color: #354438; border-radius: 12px; }
+.site-footer { color: #69735e; }
+
+@media (min-width: 1600px) {
+  h1 { font-size: 69px; }
+  .postcard-image { height: 290px; }
+  .project-body { min-height: 320px; }
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .project-grid { gap: 20px; }
+  .project-body { padding-left: 21px; }
+  .project-number { left: 21px; }
+  .project-body h3 { font-size: 21px; }
+  .project-body > p { font-size: 10.5px; }
+  .project .project-art { margin-right: 5px; margin-left: 3px; }
+  .project-art figcaption { font-size: 8px; }
+  .project-cta { padding-left: 21px; padding-right: 21px; }
+}
+@media (max-width: 1000px) {
+  h1 { font-size: 47px; }
+  .postcard-image { height: 226px; }
+  .postcard-caption { font-size: 14px; }
+  .section-heading > p { max-width: 240px; }
+  h2 { font-size: 32px; }
+}
+@media (max-width: 850px) and (min-width: 701px) {
+  a.card { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .project-body { padding: 55px 0 22px 17px; min-height: 325px; }
+  .project-number { left: 17px; top: 23px; font-size: 8px; }
+  .project-type { font-size: 7px; letter-spacing: .6px; }
+  .project-body h3 { font-size: 19px; }
+  .project-art figcaption { font-size: 7px; letter-spacing: 0; }
+  .tags { gap: 4px; }
+  .tags li { font-size: 7px; padding: 3px 5px; }
+  .project-cta { padding-left: 17px; padding-right: 17px; font-size: 10px; }
+}
+@media (max-width: 700px) {
+  .intro { padding-top: 45px; padding-bottom: 43px; gap: 40px; }
+  h1 { font-size: 52px; }
+  .postcard { width: min(84%, 340px); }
+  .postcard-image { height: 225px; }
+  .postcard-caption { font-size: 17px; }
+  .work { padding-top: 44px; padding-bottom: 43px; }
+  h2 { font-size: 32px; }
+  .section-heading > p { max-width: none; }
+  .project-grid { gap: 24px; }
+  .project-body { padding: 60px 0 23px 23px; min-height: 285px; }
+  .project-body h3 { font-size: 23px; }
+  .project-body > p { min-height: 0; font-size: 11px; }
+  .project .project-art { margin: 27px 9px 0 4px; }
+  .project-cta { padding: 14px 23px; }
+  .project summary { padding: 12px 23px; }
+  .project-art figcaption { font-size: 9px; }
+  .approach-grid article { padding: 20px 20px 20px 52px; }
+  .approach-number { left: 20px; top: 24px; }
+  .approach { padding-bottom: 45px; }
+  .contact h2 { font-size: 38px; }
+}
+@media (max-width: 390px) {
+  h1 { font-size: 45px; }
+  .project-body { padding-left: 17px; min-height: 297px; }
+  .project-number { left: 17px; }
+  .project-type { font-size: 7px; letter-spacing: .7px; }
+  .project-body h3 { font-size: 21px; }
+  .project-body > p { font-size: 10.5px; }
+  .tags li { font-size: 7px; padding: 4px 5px; }
+  .project-art figcaption { font-size: 8px; }
+  .project-cta { padding-left: 17px; padding-right: 17px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .project:hover, .project:nth-child(even):hover, .card:hover .project-art > img, .card:hover .project-cta > span { transform: none; }
+}
+@media print {
+  body { background: #fff; }
+  .project { box-shadow: none; }
+}
+/* Independent Chinese pages and page switcher */
+.page-switch{max-width:1160px;margin:18px auto 0;padding:0 42px;display:flex;align-items:center;gap:12px;font-size:10px;color:#737b68}.switch-label{font-size:9px;letter-spacing:1.5px;color:#89917d}.switch-current{padding:5px 11px;border:1px solid #cfd8bf;border-radius:999px;background:#f1f4e6;color:#536e43;font-weight:600}.site-header nav a[aria-current=page]{color:#536e43;font-weight:700}.site-header nav a[aria-current=page]::after{content:"";display:block;height:3px;width:20px;background:#94a66d;border-radius:9px;margin-top:4px}.single-page{min-height:calc(100vh - 190px)}.single-page .intro{padding-top:65px;padding-bottom:80px}.single-page .approach{padding-top:70px}.contact-page{padding-top:70px;padding-bottom:120px}.contact-page .contact-card h1{font-family:"Chalkboard SE","Trebuchet MS",sans-serif;font-size:48px;line-height:1.25;color:#f4e5c6}.contact-page .contact-card p:not(.eyebrow){font-size:14px;line-height:2;max-width:480px;margin:22px auto 28px;color:#d2d8c7}.contact-page .contact-card{padding:75px 30px 56px}.contact-page .contact-signoff{font-size:16px}.page-prev,.page-next{font-size:11px;padding:8px 0}.page-prev:hover,.page-next:hover{color:#536e43}@media(max-width:700px){.page-switch{padding:0 22px}.single-page .intro{padding-top:45px}.single-page .approach{padding-top:40px}.contact-page{padding-top:40px;padding-bottom:70px}.contact-page .contact-card{padding:52px 22px 40px}.contact-page .contact-card h1{font-size:38px}.page-switch{font-size:9px}}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" fill="none">
+  <path d="M88 161C56 86 134 41 230 39c116-3 189 53 165 147-24 93-254 85-307-25Z" fill="#edf0de"/>
+  <path d="M84 247c73-24 230-22 318 5" stroke="#dbe0c6" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="250" cy="264" rx="143" ry="10" fill="#e0e5cb" fill-opacity=".7"/>
+  <g stroke="#5e6d49" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(-8 230 196)">
+      <path d="M135 133q47-12 94 8 49-15 97 1v117q-48-19-97-3-49-22-94-8Z" fill="#a6b58a"/>
+      <path d="M137 125q46-12 92 8 48-15 94 1v115q-47-18-94-3-48-20-92-7Z" fill="#f9f6e8"/>
+      <path d="M148 126q42-9 81 7 41-14 83-2v111q-42-14-83 4-42-17-81-9Z" fill="#fffdf3"/>
+      <path d="M229 135v110" stroke="#b5b79a" stroke-width="2"/>
+      <path d="m242 247 1 22 9-5 7 8v-29" fill="#d5a48b" stroke-width="2"/>
+      <path d="m164 207 45 5m-44 7 31 4m47-5 52-4m-52 16 41-4" stroke="#cbd0b4" stroke-width="2"/>
+      <path d="M174 166c-11-10-22 4 0 18 21-13 12-30 0-18Z" fill="#dcb29b" stroke="none"/>
+      <path d="m190 160 15 4m-11 7 11 2" stroke="#c6cbb2" stroke-width="2"/>
+      <path d="m260 154 7-5 10 8-5 9-14-3Z" fill="#e7d697" stroke-width="2"/>
+      <path d="m278 177 5 1 2 7-4 3-7-5Z" fill="#b0bd93" stroke-width="1.5"/>
+      <path d="M251 189q15-24 36-12" stroke="#87966e" stroke-width="2" stroke-dasharray="4 5"/>
+      <path d="m284 173 6 5-7 3" stroke="#87966e" stroke-width="2"/>
+    </g>
+    <path d="M236 130c-1-24 7-42 2-65" stroke="#84966a"/>
+    <path d="M238 96c-27 0-40-13-36-32 24-1 40 8 36 32Z" fill="#a0b382"/>
+    <path d="M240 109c25-3 38-16 34-35-21 0-39 13-34 35Z" fill="#bdcca1"/>
+    <path d="m207 71 29 22m8 9 22-20" stroke="#84966a" stroke-width="1.8"/>
+    <g transform="rotate(17 348 184)">
+      <path d="M339 127h19v98l-9 24-10-24Z" fill="#e9cf7d"/>
+      <path d="M339 142h19m-10 3v76" stroke="#ba9f59" stroke-width="2"/>
+      <path d="M339 225h19l-9 24Z" fill="#f6ead0" stroke-width="2"/>
+      <path d="m346 242 3 7 3-7" fill="#5e6d49" stroke-width="1.5"/>
+      <path d="M339 137v-13q9-9 19 0v13Z" fill="#d6a58f"/>
+    </g>
+    <path d="M92 215h37l-4 38H98Z" fill="#cad5ad"/>
+    <path d="M129 222c23-4 19 24-2 20" stroke-width="3"/>
+    <path d="M104 206q-8-7-2-14m12 14q-7-9 0-17" stroke="#acb798" stroke-width="2"/>
+    <path d="M104 229q6 7 12 0" stroke-width="2"/>
+    <path d="m153 70 6-17 6 17 17 6-17 6-6 17-6-17-17-6Z" fill="#ecdb9d" stroke-width="2.5"/>
+    <path d="m327 75 4-10 4 10 10 4-10 4-4 10-4-10-10-4Z" fill="#f6e5b5" stroke-width="2"/>
+    <path d="M371 176q20-6 32 4m-24 4 9 3" stroke="#b4bc9d" stroke-width="2"/>
+  </g>
+  <g fill="#6d7b57"><circle cx="154" cy="75" r="1.5"/><circle cx="163" cy="75" r="1.5"/></g>
+  <path d="M156 80q3 3 6 0" stroke="#6d7b57" stroke-width="1.2" stroke-linecap="round"/>
+  <g transform="rotate(9 343 111)"><rect x="302" y="96" width="83" height="27" rx="7" fill="#faf7e9" stroke="#c5cbae" stroke-width="1.5"/><text x="343" y="114" text-anchor="middle" fill="#7a8565" font-size="10" font-family="monospace" letter-spacing="1">idea to life!</text></g>
+  <g fill="#b5c099"><circle cx="106" cy="104" r="3"/><circle cx="308" cy="49" r="2.5"/><circle cx="399" cy="144" r="3"/><circle cx="183" cy="283" r="2.5"/></g>
+  <g stroke="#9faa84" stroke-width="2" stroke-linecap="round"><path d="m81 165 10 1m-5-6-1 11m301 45 9 3m-3-6-3 10m-122 60 7 1m-3-4-1 7"/><path d="M74 130q-20-5-23 7 0 11 17 7m-4-8-6-1" stroke-dasharray="3 5"/></g>
+</svg>
