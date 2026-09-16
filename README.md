@@ -4,6 +4,8 @@ An English job-seeking portfolio with an illustrated, moonlit introduction. Clic
 
 `index.html` is the introduction; `portfolio.html` contains the profile, technology overview, four interactive project entries, project notes, and GitHub contact link. Each application returns directly to the portfolio. The entrance and project notes also work without JavaScript. Motion respects the device's reduced-motion preference.
 
+The portfolio has a soft cartoon theme with four original SVG companions: a firefly for travel, a little mouse for Hermes, a cat for GEO Radar, and a puppy for GEO Studio. The English welcome page is `index.html`; the following pages use Chinese and switch independently through `about.html` (关于我), `portfolio.html` (作品集), and `contact.html` (联系我). `cartoon-portfolio.css` contains the theme and responsive layouts; `assets/` contains the companion illustrations, notebook scene, and flower icon. Serve the entire directory to preview the pages, for example with `python3 -m http.server 8123 --bind 127.0.0.1`.
+
 在线地址：https://chengmushe.github.io/ai-portfolio/
 
 四个项目均支持个人服务绑定：
