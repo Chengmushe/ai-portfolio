@@ -1,10 +1,8 @@
-# Chengmu She · Personal Portfolio
+# 慕慕的世界 · 个人作品集
 
-An English job-seeking portfolio with an illustrated, moonlit introduction. Click anywhere on the rooftop scene to enter the personal profile and selected work. The scene depicts a boy with a green snake on his shoulder looking at the moon, and uses original SVG artwork with desktop, portrait, and landscape compositions.
+站点由三个独立页面组成：`index.html` 展示自我介绍与能力，`portfolio.html` 展示四个项目，`contact.html` 提供联系入口。顶部导航可以切换页面，各应用返回作品集。
 
-`index.html` is the introduction; `portfolio.html` contains the profile, technology overview, four interactive project entries, project notes, and GitHub contact link. Each application returns directly to the portfolio. The entrance and project notes also work without JavaScript. Motion respects the device's reduced-motion preference.
-
-The portfolio has a soft cartoon theme with four original SVG companions: a firefly for travel, a little mouse for Hermes, a cat for GEO Radar, and a puppy for GEO Studio. The English welcome page is `index.html`; the following pages use Chinese and switch independently through `about.html` (关于我), `portfolio.html` (作品集), and `contact.html` (联系我). `cartoon-portfolio.css` contains the theme and responsive layouts; `assets/` contains the companion illustrations, notebook scene, and flower icon. Serve the entire directory to preview the pages, for example with `python3 -m http.server 8123 --bind 127.0.0.1`.
+四位原创 SVG 伙伴分别是萤火虫、小老鼠、猫和小狗。Hermes 的小老鼠戴着客服耳机，在电脑前整理知识。样式位于 `cartoon-portfolio.css` 与 `home.css`，插画位于 `assets/`。
 
 在线地址：https://chengmushe.github.io/ai-portfolio/
 

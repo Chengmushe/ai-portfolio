@@ -165,3 +165,11 @@ a.card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
 }
 /* Independent Chinese pages and page switcher */
 .page-switch{max-width:1160px;margin:18px auto 0;padding:0 42px;display:flex;align-items:center;gap:12px;font-size:10px;color:#737b68}.switch-label{font-size:9px;letter-spacing:1.5px;color:#89917d}.switch-current{padding:5px 11px;border:1px solid #cfd8bf;border-radius:999px;background:#f1f4e6;color:#536e43;font-weight:600}.site-header nav a[aria-current=page]{color:#536e43;font-weight:700}.site-header nav a[aria-current=page]::after{content:"";display:block;height:3px;width:20px;background:#94a66d;border-radius:9px;margin-top:4px}.single-page{min-height:calc(100vh - 190px)}.single-page .intro{padding-top:65px;padding-bottom:80px}.single-page .approach{padding-top:70px}.contact-page{padding-top:70px;padding-bottom:120px}.contact-page .contact-card h1{font-family:"Chalkboard SE","Trebuchet MS",sans-serif;font-size:48px;line-height:1.25;color:#f4e5c6}.contact-page .contact-card p:not(.eyebrow){font-size:14px;line-height:2;max-width:480px;margin:22px auto 28px;color:#d2d8c7}.contact-page .contact-card{padding:75px 30px 56px}.contact-page .contact-signoff{font-size:16px}.page-prev,.page-next{font-size:11px;padding:8px 0}.page-prev:hover,.page-next:hover{color:#536e43}@media(max-width:700px){.page-switch{padding:0 22px}.single-page .intro{padding-top:45px}.single-page .approach{padding-top:40px}.contact-page{padding-top:40px;padding-bottom:70px}.contact-page .contact-card{padding:52px 22px 40px}.contact-page .contact-card h1{font-size:38px}.page-switch{font-size:9px}}
+
+/* All three page links remain available on narrow screens. */
+.site-header nav > a:first-child { display: inline-block; }
+.site-header nav a[aria-current="page"] { color: #536e43; font-weight: 700; }
+@media (max-width: 390px) {
+  .site-header { gap: 8px; }
+  .site-header nav { gap: 12px; white-space: nowrap; }
+}
