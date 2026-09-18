@@ -1,0 +1,6 @@
+/* Gentle movement between the three portfolio pages. */
+@keyframes page-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes page-exit{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-8px)}}
+body{animation:page-enter .48s cubic-bezier(.22,.61,.36,1) both;will-change:opacity,transform}
+body.page-exiting{animation:page-exit .2s ease-in both;pointer-events:none}
+@media(prefers-reduced-motion:reduce){body,body.page-exiting{animation:none!important}}
