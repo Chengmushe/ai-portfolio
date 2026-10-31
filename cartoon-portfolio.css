@@ -33,6 +33,34 @@ h2 em { color: #688249; }
 .section-heading { margin-bottom: 29px; gap: 24px; }
 .section-heading > p { max-width: 280px; }
 
+.internship-work { padding-top: 48px; padding-bottom: 86px; border-top: 1px solid var(--line); }
+.internship-work .section-heading { margin-bottom: 38px; }
+.internship-work .section-heading > p { text-align: right; }
+.case-list { border-top: 1px solid #cbd4c3; }
+.case-study { display: grid; grid-template-columns: minmax(130px, 190px) minmax(0, 1fr); gap: 36px; padding: 31px 0 35px; border-bottom: 1px solid #cbd4c3; }
+.case-index { display: flex; flex-direction: column; gap: 7px; color: #5a7250; font-size: 11px; }
+.case-index span:first-child { font-family: Georgia, serif; font-size: 28px; line-height: 1; }
+.case-content { min-width: 0; }
+.case-content h3 { font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 8px; }
+.case-lead { color: #455b45; font-size: 13px; line-height: 1.7; margin-bottom: 17px; }
+.case-content dl { margin: 0; display: grid; gap: 10px; }
+.case-content dl > div { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 14px; }
+.case-content dt { color: #627453; font-size: 11px; font-weight: 700; line-height: 1.8; }
+.case-content dd { margin: 0; color: #59665b; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; padding: 0; margin: 19px 0 0; }
+.case-tags li { border: 1px solid #cbd4c3; border-radius: 4px; padding: 4px 7px; color: #52684a; font-size: 10px; }
+@media (max-width: 700px) {
+  .internship-work { padding-top: 40px; padding-bottom: 56px; }
+  .internship-work .section-heading > p { text-align: left; }
+  .case-study { grid-template-columns: 1fr; gap: 13px; padding: 26px 0 30px; }
+  .case-index { flex-direction: row; align-items: center; gap: 11px; }
+  .case-index span:first-child { font-size: 22px; }
+  .case-content h3 { font-size: 20px; }
+}
+@media (max-width: 390px) {
+  .case-content dl > div { grid-template-columns: 1fr; gap: 1px; }
+}
+
 .project-grid { gap: 25px; }
 .project {
   --card-bg: #f3f4dd;

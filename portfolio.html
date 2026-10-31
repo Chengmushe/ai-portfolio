@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f9f7ef">
-  <meta name="description" content="Chengmu She's job-seeking portfolio. Explore four working AI applications: travel planning, team knowledge, brand visibility, and content creation.">
+  <meta name="description" content="佘承穆的 AI 应用作品集：四个可体验应用，以及问数、客服分析、质检和企业业务工作台项目。">
   <title>作品集 · Chengmu She</title>
   <link rel="icon" href="./assets/little-flower.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./portfolio-e16bf6b3eb.css">
@@ -17,7 +17,7 @@
   <symbol id="star" viewBox="0 0 40 40"><path d="m20 2 5 12 13 6-13 5-5 13-6-13-12-5 12-6Z" fill="currentColor"/></symbol>
 </defs></svg>
 <header class="site-header"><a class="brand" href="./index.html" aria-label="回到慕慕的世界首页"><img src="./assets/little-flower.svg" width="35" height="35" alt=""><span>Chengmu She<span class="brand-caption">A CURIOUS BUILDER</span></span></a><nav aria-label="页面导航"><a href="./index.html" data-page="home">首页</a><a href="./portfolio.html" data-page="work" aria-current="page">作品集</a><a href="./contact.html" data-page="contact">联系我</a></nav></header><div class="page-switch"><span class="switch-label">页面切换</span><span class="switch-current">作品集</span></div><main id="main"><section class="work section-wrap" id="work" aria-labelledby="work-title">
-    <div class="section-heading"><div><p class="eyebrow">02 / SELECTED WORK</p><h2 id="work-title">小小想法。<br><em>真正可用的作品。</em></h2></div><p>四个实用项目，四位可爱伙伴。<br>选择一个朋友，打开应用，看看它如何工作。</p></div>
+    <div class="section-heading"><div><p class="eyebrow">02 / SELECTED WORK</p><h2 id="work-title">小小想法。<br><em>真正可用的作品。</em></h2></div><p>四个可体验应用。<br>选择一个项目，打开应用，看看它如何工作。</p></div>
     <div class="project-grid">
       <article class="project travel-project">
         <a class="card" href="./trip-planner.html" aria-label="Open 智能旅行助手">
@@ -54,6 +54,27 @@
           <div class="project-cta">给灵感留个位置 <span aria-hidden="true">↗</span></div>
         </a>
         <details><summary>幕后故事 <span aria-hidden="true">+</span></summary><div class="project-notes"><h4>The problem</h4><p>AI rewriting should make writing easier without taking control away from the author.</p><h4>The implementation</h4><p>A Markdown editor with sanitized preview, before-and-after AI suggestions, apply and undo controls, local recovery, and WordPress / MetaWeblog draft connections.</p><h4>Try this</h4><p>Write a paragraph, request a different tone, compare both versions, and choose what to keep.</p><p class="scope-note">A functional reimplementation from a project brief. CMS connections create drafts; public publishing stays with the author.</p></div></details>
+      </article>
+    </div>
+  </section>
+  <section class="internship-work section-wrap" aria-labelledby="internship-title">
+    <div class="section-heading"><div><p class="eyebrow">03 / INTERNSHIP WORK</p><h2 id="internship-title">来自业务现场的<br><em>AI 应用实践。</em></h2></div><p>杭州由莱科技有限公司（Ulike）<br>AI 实习生 · 2026.08 至今</p></div>
+    <div class="case-list">
+      <article class="case-study" id="ask-agent">
+        <div class="case-index"><span>01</span><span>数据与分析</span></div>
+        <div class="case-content"><h3>Ask 问数 Agent</h3><p class="case-lead">让业务团队直接询问销售、产品等指标，同时看清数字的来源和计算口径。</p><dl><div><dt>业务背景</dt><dd>临时问数依赖跨表查询和人工解释，业务人员需要更快获取可信的指标结果。</dd></div><div><dt>方案实现</dt><dd>负责问题澄清、指标匹配与查询链路，串联 Data Skills、Wren 和只读 MySQL；接入身份与 PostgreSQL 任务记录，通过流式交互展示进度，并将回答关联查询条件和原始数据。</dd></div></dl><ul class="case-tags" aria-label="技术栈"><li>Agent</li><li>Wren</li><li>MySQL</li><li>PostgreSQL</li></ul></div>
+      </article>
+      <article class="case-study" id="voc-service">
+        <div class="case-index"><span>02</span><span>客户洞察</span></div>
+        <div class="case-content"><h3>独立 VOC 客服服务</h3><p class="case-lead">把分散的客户反馈整理成可查询、可复盘的分析结果。</p><dl><div><dt>业务背景</dt><dd>客服与产品团队需要按月份、产品和来源追踪高频问题，并定期形成一致口径的分析报告。</dd></div><div><dt>方案实现</dt><dd>负责反馈、标签结果和标签明细的三表快照与独立存储；统一问答和报表的数据口径，串联反馈查询、固定报告与 Word 导出。</dd></div></dl><ul class="case-tags" aria-label="技术栈"><li>数据快照</li><li>SQL</li><li>报告生成</li></ul></div>
+      </article>
+      <article class="case-study" id="overseas-qa">
+        <div class="case-index"><span>03</span><span>服务质量</span></div>
+        <div class="case-content"><h3>海外客服质检 Agent</h3><p class="case-lead">让质检结论能回到原始会话，也能进入申诉与复核流程。</p><dl><div><dt>业务背景</dt><dd>海外客服会话持续增加，管理人员需要按统一标准检查响应时长、沟通方式与处理步骤。</dd></div><div><dt>方案实现</dt><dd>负责会话接入、标准管理、响应时间计算和模型评分；将结果与原始对话关联，并设计申诉、复核、通知及任务状态追踪。</dd></div></dl><ul class="case-tags" aria-label="技术栈"><li>Agent</li><li>异步任务</li><li>会话处理</li></ul></div>
+      </article>
+      <article class="case-study" id="business-workbench">
+        <div class="case-index"><span>04</span><span>企业流程</span></div>
+        <div class="case-content"><h3>企业业务智能工作台</h3><p class="case-lead">围绕客服培训、文件管理、法务申请和内容创作，建设面向不同团队的业务模块。</p><dl><div><dt>业务背景</dt><dd>模拟接待训练、体系文件审核、量产 BOM 归档、合同核验与素材生成各有独立流程，需要清晰的身份、版本和任务状态。</dd></div><div><dt>方案实现</dt><dd>负责模拟对话与评分、QMS 文件提交审核、DMR BOM 解析归档、合同 OCR 与 OA 申请，以及 AIGC 异步生成；设计文件版本与状态记录，支持进度展示和原件追溯。</dd></div></dl><ul class="case-tags" aria-label="技术栈"><li>RAG</li><li>OCR</li><li>SQLite</li><li>SSE</li></ul></div>
       </article>
     </div>
   </section>

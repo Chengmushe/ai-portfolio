@@ -1,12 +1,12 @@
 # 慕慕的世界 · 个人作品集
 
-站点由三个独立页面组成：`index.html` 展示自我介绍与能力，`portfolio.html` 展示四个项目，`contact.html` 提供联系入口。顶部导航可以切换页面，各应用返回作品集。
+站点由三个独立页面组成：`index.html` 展示自我介绍与能力，`portfolio.html` 展示四个可体验应用与四个实习项目案例，`contact.html` 提供联系入口。顶部导航可以切换页面，各应用返回作品集。
 
 四位原创 SVG 伙伴分别是萤火虫、小老鼠、猫和小狗。Hermes 的小老鼠戴着客服耳机，在电脑前整理知识。样式位于 `cartoon-portfolio.css` 与 `home.css`，插画位于 `assets/`。
 
 在线地址：https://chengmushe.github.io/ai-portfolio/
 
-四个项目均支持个人服务绑定：
+四个可体验应用均支持个人服务绑定：
 
 - **智能旅行助手**：打开 AI 设置，填写 API Key、模型名称和 Base URL，生成并修改行程。
 - **Hermes**：打开服务设置绑定模型，用知识库、记忆和已启用技能进行问答并提炼技能。渠道连接支持绑定 Hermes 后端，再配置企业微信、飞书或钉钉转发器凭据及白名单。
