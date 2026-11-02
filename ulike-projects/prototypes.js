@@ -24,6 +24,31 @@ deploy:{kpis:['注册项目','3','运行状态','未接入','操作日志','样�
 ops:{kpis:['观察模式','observe','恢复动作','关闭','控制面','未接入'],cols:['项目','预期','观察','决策'],rows:[['ask-agent','running','unhealthy 样例','继续观察'],['aigc-workbench','running','ready 样例','无需操作'],['qms-operations','running','degraded 样例','不自动恢复']],tabs:['观察快照','恢复意图','事件历史'],action:'评估恢复候选',note:'不连接 ai-deploy；enforce 样例仅预览条件，不提交恢复请求。'}
 };
 
+const MODULE_CONTENT={
+platform:['模型目录记录供应商、模型和可见分组。','渠道与令牌分别配置；模型在目录中不等于可调用。','调用审计展示请求身份、模型、渠道与额度消耗。'],
+ask:['Data Skill 发布业务表、指标、维度及已核实 SQL。','运行证据关联查询步骤、结果表与结论来源。'],
+'voc-service':['固定报告按周期、系列和国家冻结事实范围。','来源证据以独立反馈计数，不能把多标签明细当反馈数。'],
+aigc:['图片任务需选择支持的尺寸、比例与参考图。','视频任务区分文本、首帧、首尾帧与多参考模式。','素材库记录来源、标签、归属与复用次数。'],
+'voc-tagger':['正式标签来自发布的 FMS 标签树与业务字典。','人工复核应保存纠正值与关联明细，不能覆盖原证据。'],
+qms:['资料总览按公司、模块、分类和资料项组织。','周期任务保留负责人、版本、阶段和操作历史。','我的提交应区分电子档、纸质档与 NAS 文件状态。'],
+nas:['云端任务仅领取已归档的最新提交文件。','传输日志记录租约、重试、错误及完成时间。','读取需按当前查看者身份授权，不能复用提交人身份。'],
+dmr:['批量录入逐项展示字段候选与解析证据。','受控文件保留当前有效版本、原件和文控确认。','历史版本可追溯，但低版本不覆盖当前文件。'],
+legal:['主体、银行账户分别成行核对。','OA 预填前展示字段缺项与附件映射；最终提交仍由用户在 OA 完成。'],
+ocr:['返回结构包含文字、页码、行坐标和置信度。','健康状态须分别看模型加载和工作进程就绪。'],
+translation:['术语档案决定翻译用词与结构验收规则。','产物区应提供原 DOCX、译文、报告及 ZIP；当前不可下载。'],
+reception:['模拟接待逐轮提示安抚、核验与下一步。','训练报告汇总对话、扣分解释与建议话术。','组织任务由管理员分配计划、人员和截止日期。'],
+'overseas-qa':['接待监控承接进行中、消息缺失与模型待重试会话。','复议会产生新版本并保存操作者、证据和前后变化。'],
+autorecruit:['候选人列表区分硬门槛通过、未通过与资料待核实。','HR 决策不能由模型评分替代，触达前需二次确认。','触达队列保留登录、验证码、平台拦截等失败类型。'],
+meeting:['候选会议室应展示空间、设备与必选成员共同空闲。','我的预约保留申请人归属；取消需一次性确认卡。'],
+amazon:['只检查活动时间内的 Listing；站点取自 Amazon Store。','结果分别保存价格、配送、Buy Box 状态。','异常须复查确认，不能在首次失败时直接通知。'],
+kol:['到期台账保留授权事实与人工处理状态。','D-3、D+7 提醒分别记录发送阶段。','周报区分未来临期、过期未下架与长期未处理。'],
+bridge:['Wiki 遍历按节点去重、深度和上限处理。','只对 doc/docx 抽取 Markdown；Base 节点标为跳过正文。'],
+ipl:['IPL 与 MASK 有独立模型、阈值和缓存。','健康页须分别展示两套模型就绪状态。'],
+caddy:['路由测试区分前缀剥离、原样转发与 308 规范化。','网关配置仅负责代理，不负责平台登录和服务授权。'],
+deploy:['发布操作记录步骤、操作者、结果与失败原因。','发布记录保留真实版本；回滚不恢复数据库或附件。','日志按项目运行方式读取，服务健康需单独验证。'],
+ops:['观察快照需连续采样并检查主机安全条件。','恢复意图先持久保存 request_id，再等控制面回执。']
+};
+
 /* Screen-level interactions: tabs, sample selection, draft preview, connection checks. */
 window.renderPrototype=function(p){
   const model=window.ULIKE_PROTOTYPES[p.id];
@@ -50,7 +75,8 @@ window.renderPrototype=function(p){
   function secondaryView(index){
     const labels=model.tabs[index];
     if((p.id==='ask'||p.id==='reception')&&index===1){let s=state(p),messages=s.messages.length?s.messages:[{role:'assistant',text:p.id==='ask'?'请先输入业务问题；数据源未接入时，我会明确指出无法计算的指标。':'买家：订单迟迟没有送达，能帮我查一下吗？'}];return '<div class="proto-chat"><div class="proto-chat-history">'+messages.map(m=>'<div class="proto-chat-bubble '+safe(m.role)+'"><small>'+(m.role==='user'?'你':'原型助手')+'</small>'+safe(m.text)+'</div>').join('')+'</div><form id="protoChatForm"><input name="message" placeholder="输入一条消息，体验会话界面…" required><button class="btn primary">发送</button></form><p class="inline-note">本地规则回应。模型和业务数据库尚未接入。</p></div>'}
-    return '<div class="proto-secondary"><div class="proto-secondary-art" aria-hidden="true">'+(['✧','✿','◇','▦'][index%4])+'</div><div><span class="eyebrow">'+safe(p.title)+'</span><h3>'+safe(labels)+'工作区</h3><p>'+safe(model.note)+'</p><button class="btn primary" id="protoAction">创建操作草稿 →</button></div></div><div class="proto-list-title"><h3>'+safe(labels)+' · 合成资料</h3><span>非实时数据</span></div>'+table()+'<div class="proto-local-records"><div class="proto-list-title"><h3>我的原型任务</h3><span>可推进本地状态</span></div>'+localRecords()+'</div>'}
+    const explanation=(MODULE_CONTENT[p.id]||[])[index-1]||model.note;
+    return '<div class="proto-secondary"><div class="proto-secondary-art" aria-hidden="true">'+(['✧','✿','◇','▦'][index%4])+'</div><div><span class="eyebrow">'+safe(p.title)+'</span><h3>'+safe(labels)+'工作区</h3><p>'+safe(explanation)+'</p><button class="btn primary" id="protoAction">创建操作草稿 →</button></div></div><div class="proto-module-grid"><div><small>此模块的业务规则</small><strong>'+safe(explanation)+'</strong></div><div><small>接口接入状态</small><strong>未接入数据库与 API；仅展示合成样例和本地草稿。</strong></div></div><div class="proto-list-title"><h3>'+safe(labels)+' · 合成资料</h3><span>非实时数据</span></div>'+table()+'<div class="proto-local-records"><div class="proto-list-title"><h3>我的原型任务</h3><span>可推进本地状态</span></div>'+localRecords()+'</div>'}
   function titleFor(index){return model.tabs[index]+'的前端结构已预留'}
   function selectSample(i){const row=model.rows[i];$('#protoDetail').innerHTML='<span>'+String(i+1).padStart(2,'0')+' / 合成记录</span><h3>'+safe(row[0])+'</h3><p>'+model.cols.map((c,j)=>safe(c)+'：'+safe(row[j])).join('　·　')+'</p>'}
   function localRecords(){const s=state(p),arr=stages(p);if(!s.items.length)return '<p class="proto-empty">还没有操作草稿。填写表单即可创建一条，并体验项目状态变化。</p>';return '<div class="proto-record-list">'+s.items.slice(0,8).map(x=>'<div class="proto-record"><div><strong>'+safe(x.title)+'</strong><small>'+safe(x.created)+' · '+safe(arr[x.stage]||'待核对')+'</small></div><div><button class="btn" data-proto-next="'+x.id+'" '+(x.stage>=arr.length-1?'disabled':'')+'>'+(p.id==='qms'&&x.stage===2?'重新提交':'下一步')+'</button>'+(p.id==='qms'&&x.stage===1?'<button class="btn" data-proto-return="'+x.id+'">退回</button>':'')+'<button class="btn ghost" data-proto-delete="'+x.id+'" aria-label="删除 '+safe(x.title)+'">×</button></div></div>').join('')+'</div>'}
