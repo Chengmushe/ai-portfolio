@@ -27,11 +27,11 @@ window.ULIKE_API = {
   available(id){return Boolean((window.ULIKE_CONNECTIONS||{})[id]);},
   async request(id,kind,{method='GET',body,signal}={}){
     const base=(window.ULIKE_CONNECTIONS||{})[id];
-    if(!base)throw new Error('未接入数据库和 API：当前页面仅展示合成样例。');
+    if(!base)throw new Error('未接入数据库和 API：当前页面无法执行真实业务操作。');
     const parsed=new URL(base);
     if(parsed.protocol!=='https:'&&!(parsed.protocol==='http:'&&parsed.hostname==='localhost'))throw new Error('接入地址需为 HTTPS 后端网关；仅本机开发允许 localhost。');
-    const path=this.contracts[id]?.[kind];
-    if(!path)throw new Error('该项目尚未配置 '+kind+' 接口。');
+    const path=kind.startsWith("/")?kind:this.contracts[id]?.[kind];
+    if(!path||path.includes("{"))throw new Error('该项目尚未配置 '+kind+' 接口。');
     const res=await fetch(base.endsWith('/')?base.slice(0,-1)+path:base+path,{method,credentials:'include',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined,signal});
     if(!res.ok)throw new Error('接口返回 HTTP '+res.status+'，请检查身份、权限和服务状态。');
     const type=res.headers.get('content-type')||'';
