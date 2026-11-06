@@ -10,6 +10,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[char]));
+  const guide = window.PROJECT_GUIDE?.[id];
 
   window.renderProjectApp(project);
   const app = document.getElementById('app');
@@ -20,8 +21,8 @@
     '<button class="intro-close" type="button" aria-label="关闭项目介绍">×</button>' +
     '<figure class="animal-art"><img src="../assets/project-animals/' + escapeHtml(project.animal) + '.svg" alt="' + escapeHtml(project.animalName) + '插画"><figcaption>✧ ' + escapeHtml(project.animalName) + '</figcaption></figure>' +
     '<div class="intro-copy"><span class="eyebrow">' + escapeHtml(project.collection) + ' · ' + escapeHtml(project.category) + '</span>' +
-    '<h2 id="introTitle">' + escapeHtml(project.title) + '</h2><p id="introDescription">' + escapeHtml(project.desc) + '</p>' +
-    '<div class="intro-flow"><strong>项目流程</strong><p>' + project.flow.map(escapeHtml).join(' → ') + '</p></div>' +
+    '<h2 id="introTitle">' + escapeHtml(project.title) + '</h2><p id="introDescription">' + escapeHtml(guide?.[1] || project.desc) + '</p>' +
+    '<div class="intro-flow"><strong>谁会使用</strong><p>' + escapeHtml(guide?.[0] || project.category) + '</p><strong>实际业务流程</strong><p>' + (guide ? guide.slice(2, 5) : project.flow).map(escapeHtml).join(' → ') + '</p></div>' +
     '<p class="intro-status">当前未接入原项目数据库和 API；需要真实服务的功能暂不可用。</p>' +
     '<button class="btn primary intro-confirm" type="button">确定，查看项目 ↗</button></div></section>';
   document.body.append(overlay);

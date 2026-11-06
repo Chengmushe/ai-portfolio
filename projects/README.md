@@ -1,5 +1,7 @@
 # 由莱 AI 项目独立前端
 
+项目说明对照用户提供的 2026-11-02 完整复现文档第 01—22 章：每页解释使用者、真实用途、业务步骤、当前入口和接入后的结果。22 页均设置项目专属操作区；Ask、独立 VOC、QMS、海外 QA、会议室、图片识别、Amazon 监控与 Caddy 路由还支持多步前端流程。所有本机记录只用于说明操作顺序，不等于真实业务执行。
+
 22 个模块各有独立 HTML 页面和网址，目录入口在 `projects/index.html#/projects`。访客点击动物卡片后先阅读介绍并确认，再进入对应页面。旧版 `#/project/...` 链接会跳转到独立页面。
 
 `project-features.js` 与 `project-features-more.js` 实现各模块界面、交互和本机草稿。`app-pages.js` 提供统一作品集视觉外壳，`standalone.js` 提供独立页面的项目介绍弹窗。运行 `node projects/build-pages.mjs` 可根据 `app.js` 的项目资料重新生成 22 个 HTML 和 `project-catalog.js`。草稿在本浏览器 `localStorage` 保存；业务结果不伪造。
